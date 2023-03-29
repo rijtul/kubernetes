@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ussdapp2
+  labels:
+    zone: zone1
+    type: web
+    author: NPS
+spec:
+  containers:
+  - name: nginx1
+    image: nginx
+    ports:
+    - containerPort: 80
+  - name: tomcat1
+    image: tomcat
+    ports:
+    - containerPort: 8080

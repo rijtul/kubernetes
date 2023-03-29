@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ussdapp1
+spec:
+  replicas: 6
+  selector:
+     matchLabels:
+        tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx1
+        image: nginx
+        ports:
+        - containerPort: 80
+      - name: tomcat1
+        image: tomcat
+        ports:
+        - containerPort: 8080
